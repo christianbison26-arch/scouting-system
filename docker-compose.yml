@@ -1,0 +1,42 @@
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    container_name: sports-db
+    restart: always
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PWD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    ports:
+      - "5432:5432"
+    volumes:
+      # CAMBIO QUI: Usiamo un volume gestito da Docker, non una cartella locale
+      - postgres_storage:/var/lib/postgresql/data
+
+  ollama:
+    image: ollama/ollama
+    container_name: ollama-service
+    restart: always
+    volumes:
+      - ./ollama_data:/root/.ollama
+    ports:
+      - "11434:11434"
+
+  app:
+    build: .
+    container_name: sports-app
+    depends_on:
+      - db
+      - ollama
+    ports:
+      - "8501:8501"
+    environment:
+      - DATABASE_URL=${DATABASE_URL}
+      - OLLAMA_BASE_URL=http://ollama:11434
+      - SOCCERDATA_DIR=/app/data
+    volumes:
+      - ./data:/app/data
+
+# AGGIUNGI QUESTE RIGHE IN FONDO AL FILE
+volumes:
+  postgres_storage:
