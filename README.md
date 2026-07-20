@@ -82,7 +82,7 @@ OLLAMA_BASE_URL=http://ollama:11434
 
 Scarica il dataset da Kaggle e copialo nella cartella `data/`:
 
-1. Scarica il CSV da [Kaggle — English Premier League Players Statistics](https://www.kaggle.com/code/desalegngeb/english-premier-league-players-statistics/notebook)
+1. Scarica il CSV da [Kaggle — English Premier League Players Statistics](https://www.kaggle.com/code/desalegngeb/english-premier-league-players-statistics/notebook) realizzato da Rishikesh Kanabar
 2. Rinominalo in `dataset_-_2020-09-24.csv` e copialo in `data/`
 
 ```bash
@@ -252,7 +252,7 @@ OLLAMA_BASE_URL=http://ollama:11434
 
 Download the dataset from Kaggle and copy it to the `data/` folder:
 
-1. Download the CSV from [Kaggle — English Premier League Players Statistics](https://www.kaggle.com/code/desalegngeb/english-premier-league-players-statistics/notebook)
+1. Download the CSV from [Kaggle — English Premier League Players Statistics](https://www.kaggle.com/code/desalegngeb/english-premier-league-players-statistics/notebook) made by Rishikesh Kanabar
 2. Rename it to `dataset_-_2020-09-24.csv` and copy it to `data/`
 
 ```bash
